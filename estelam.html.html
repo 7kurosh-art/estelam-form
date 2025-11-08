@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>استعلام قیمت بارنامه</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form action="http://185.243.48.132/parsian/BOL/WayBill/Inquery_OrfOstan" method="POST">
+    <label>شهر مبدا:</label>
+    <input type="text" name="originCity" value="اشتهارد (البرز)">
+
+    <label>شهر مقصد:</label>
+    <input type="text" name="destinationCity" value="گمرک دوغارون (خراسان رضوی)">
+
+    <label>نوع بارگیر:</label>
+    <input type="text" name="cargoType" value="مسقف 12 چرخ">
+
+    <label>نام محموله:</label>
+    <input type="text" name="cargoName" value="پاکت انواع">
+
+    <label>وزن محموله (کیلوگرم):</label>
+    <input type="number" name="cargoWeight" value="23000">
+
+    <label>تعرفه پیشنهادی:</label>
+    <input type="number" name="suggestedTariff" value="0">
+
+    <label>درصد کمیسیون:</label>
+    <input type="number" name="commissionPercent" value="13.5">
+
+    <button type="submit">استعلام قیمت</button>
+  </form>
+</body>
+</html>
