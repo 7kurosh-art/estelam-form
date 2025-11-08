@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>استعلام قیمت بارنامه</title>
+  <script>
+    // بررسی اینکه آیا کاربر قبلاً ذخیره شده
+    if (!localStorage.getItem("userLoggedIn")) {
+      localStorage.setItem("userLoggedIn", "true");
+      console.log("✅ کاربر برای اولین بار وارد شد و ذخیره شد.");
+    } else {
+      console.log("👤 کاربر قبلاً وارد شده.");
+    }
+  </script>
   <style>
     body {
       font-family: sans-serif;
       padding: 20px;
       background: #f9f9f9;
+      direction: rtl;
     }
     label {
       display: block;
@@ -20,16 +30,22 @@
       padding: 10px;
       margin-top: 5px;
       font-size: 16px;
+      box-sizing: border-box;
     }
     button {
       background-color: #007bff;
       color: white;
       border: none;
       margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
+  <h2>فرم استعلام قیمت بارنامه</h2>
   <form action="http://185.243.48.132/parsian/BOL/WayBill/Inquery_OrfOstan" method="POST">
     <label>شهر مبدا:</label>
     <input type="text" name="originCity" value="اشتهارد (البرز)">
